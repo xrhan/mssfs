@@ -17,8 +17,8 @@ We provide our pre-trained model (with data augmentation) in the `saved_models/`
 ### Getting started
 First, clone our repository
 ```
-git clone 
-cd 
+git clone https://github.com/xrhan/mssfs.git
+cd mssfs
 ```
 The training code is contained in `model_train.py` and the guided sampling code is in `multiscale.py`. The spatial consistency loss functions are implemented in `ddim.py` and the lighting consistency guidance functions are in `lighting.py`.
 

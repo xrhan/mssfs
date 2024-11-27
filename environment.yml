@@ -1,7 +1,7 @@
 name: sfs
 channels:
   - conda-forge
-  - defaults
+  - pytorch
 dependencies:
   # System-level packages similar to apt-get libraries
   - python=3.10.12
@@ -14,8 +14,6 @@ dependencies:
   - pip
   - pytorch
   - torchvision
-  - torchaudio
-  - tensorboard
   - opencv
   
   # Additional dependencies through pip

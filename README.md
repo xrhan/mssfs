@@ -42,8 +42,17 @@ To generate surface normal predictions on the 4 default test images (with 4 rand
 ```
 You will find the generated results (in both image plot and raw pickle file) in the `eval/` folder. The plot shows the denoising process across multiple scales and a final result.
 
-### Option 2. Installation on server
+### Option 2. Installation on remote server
+Create a new conda environement using:
+```
+conda env create -f environment.yaml
+conda activate sfs
+```
 
+To run inference in the background, use
+```
+nohup python3 multiscale.py --files 0 --model 1 --save-name test&
+```
 
 ## 🍵 Analyze the results
 The file `post_process.py` contains some functions to analyze the sample distributions. For instance, computing the Wasserstein distance between distributions or projecting the samples to lower dimensions using tSNE.

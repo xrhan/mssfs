@@ -1,0 +1,25 @@
+name: sfs
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # System-level packages similar to apt-get libraries
+  - python=3.10.12
+  - numpy
+  - scipy
+  - scikit-learn
+  - scikit-image
+  - matplotlib
+  - pillow
+  - pip
+  - pytorch
+  - torchvision
+  - torchaudio
+  - tensorboard
+  - opencv
+  
+  # Additional dependencies through pip
+  - pip:
+      - einops
+      - datasets
+      - tqdm

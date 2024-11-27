@@ -5,6 +5,9 @@
 [Xinran Nicole Han](https://xrhan.github.io/), [Todd Zickler](https://www.eecs.harvard.edu/~zickler/), [Ko Nishino](https://vision.ist.i.kyoto-u.ac.jp/) <br>
 
 ## 🧐 Introduction
+We present a bottom-up, patch-based diffusion model for monocular shape from shading that produces multimodal outputs, similar to multistable perception in humans.
+
+![demo](./imgs/intro.png)
 
 [//]: # (### Abstract)
 > Models for inferring monocular shape of surfaces with diffuse reflection -- shape from shading -- ought to produce distributions of outputs, because there are fundamental mathematical ambiguities of both continuous (e.g., bas-relief) and discrete (e.g., convex/concave) types that are also experienced by humans. Yet, the outputs of current models are limited to point estimates or tight distributions around single modes, which prevent them from capturing these effects. We introduce a model that reconstructs a multimodal distribution of shapes from a single shading image, which aligns with the human experience of multistable perception. We train a small denoising diffusion process to generate surface normal fields from 16×16 patches of synthetic images of everyday 3D objects. We deploy this model patch-wise at multiple scales, with guidance from inter-patch shape consistency constraints. Despite its relatively small parameter count and predominantly bottom-up structure, we show that multistable shape explanations emerge from this model for ambiguous test images that humans experience as being multistable. At the same time, the model produces veridical shape estimates for object-like images that include distinctive occluding contours and appear less ambiguous. This may inspire new architectures for stochastic 3D shape perception that are more efficient and better aligned with human experience.
@@ -23,6 +26,8 @@ cd mssfs
 The training code is contained in `model_train.py` and the guided sampling code is in `multiscale.py`. The spatial consistency loss functions are implemented in `ddim.py` and the lighting consistency guidance functions are in `lighting.py`.
 
 We provide four test images in `test_data/` to reproduce the results in Figure. 5 of our paper.
+
+![test_data](./imgs/test_imgs.png)
 
 Our default scheduler employs a V-cycle (fine-coarse-fine) and produces outputs at resolution 160 by 160 pixels. You can specify the random seeds, test images and test model in the main function of `multiscale.py`.
 

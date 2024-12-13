@@ -45,7 +45,7 @@ You will find the generated results (in both image plot and raw pickle file) in 
 ### Option 2. Installation on remote server
 Create a new conda environement using:
 ```
-conda env create -f environment.yaml
+conda env create -f environment.yml
 conda activate sfs
 ```
 
